@@ -26,6 +26,15 @@ export function findByString(...strings: string[]): any | void {
 export const React: any = findByProps("createElement", "__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED");
 export const ReactDOM: any = findByProps("findDOMNode", "unmountComponentAtNode", "__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED");
 
+// Disable sentries
+try {
+    window.__SENTRY__.hub.getClient().close(0);
+    window.__SENTRY__.logger.disable();
+}
+catch (e) {
+    console.error("ReGuilded Addon SDK", "Failed to disable sentries!", e);
+}
+
 // Tools
 export function waitForElement(selector: string): Promise<Node | Element> {
     return new Promise<Node | Element>(resolve => {
