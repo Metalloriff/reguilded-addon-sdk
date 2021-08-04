@@ -1,0 +1,78 @@
+﻿.ExampleModalContainer {
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  // Yes, this number is necessary. Guilded has the worst CSS I've ever seen
+  z-index: 99999;
+  
+  background-color: rgba(black, 0.5);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .ModalExample {
+    // Guilded is shit, and does not use CSS properties, so I will use something better, the Nord palette https://www.nordtheme.com/
+    background-color: #2e3440;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(black, 0.5);
+    
+    width: 800px;
+    max-width: 90vw;
+    height: 600px;
+    max-height: 90vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .Title {
+      text-align: center;
+      margin-top: 10px;
+      
+      font-size: 1.2em;
+      font-weight: bolder;
+    }
+    
+    .Body {
+      margin-bottom: auto;
+      margin-top: 10px;
+      
+      opacity: 0.6;
+    }
+    
+    .Image {
+      width: 60%;
+      border-radius: 4px;
+      overflow: hidden;
+      
+      transition: transform 250ms ease-in, box-shadow 250ms ease-in;
+      
+      &:Hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(black, 0.5);
+      }
+    }
+    
+    .Footer {
+      margin-top: auto;
+      
+      background-color: #3b4252;
+      box-shadow: 0 0 10px rgba(black, 0.25);
+      
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      
+      .Button {
+        padding: 10px 20px;
+        background-color: #434c5e;
+        
+        border-radius: 4px;
+        cursor: pointer;
+        
+        margin: 10px;
+      }
+    }
+  }
+}

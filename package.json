@@ -1,0 +1,27 @@
+{
+  "name": "reguilded-addon-sdk",
+  "description": "An unofficial webpack compiler for ReGuilded addons.",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npx webpack --env addon=%npm_config_addon% --env release=true",
+    "start": "npx webpack --env addon=%npm_config_addon% --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@sucrase/webpack-loader": "^2.0.0",
+    "css-loader": "^6.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass": "^1.37.2",
+    "sass-loader": "^12.1.0",
+    "scss-loader": "^0.0.1",
+    "ts-loader": "^9.2.5",
+    "style-loader": "^3.2.1",
+    "sucrase": "^3.20.0",
+    "webpack": "^5.48.0",
+    "webpack-cli": "^4.7.2",
+    "yargs": "^17.0.1"
+  }
+}

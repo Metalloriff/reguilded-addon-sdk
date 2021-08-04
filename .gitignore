@@ -1,0 +1,5 @@
+/node_modules/
+/output/
+/release/
+package-lock.json
+/.idea/
