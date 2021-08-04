@@ -67,8 +67,7 @@ export default new class extends BaseAddon {
         
         for (const component of components)
             patcher.before(this.id, component, "render", ({ props }) => {
-                if (!~props.className.split(" ").indexOf("LinkRenderer")) return;
-                
+                if (!props?.className || !~props.className.split(" ").indexOf("LinkRenderer")) return;
                 const ref = React.createRef();
                 
                 props.children = (
