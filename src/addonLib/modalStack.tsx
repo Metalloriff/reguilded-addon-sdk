@@ -83,7 +83,7 @@ export default class ModalStack extends React.Component<null, ModalStackState> {
             <div className={"ModalStack" + (stack.length > closing.length ? " Active" : "")}>
                 { stack.map((modal, id) => (
                     <div className={"ModalContainer" + (~closing.indexOf(modal) || id < stack.length - 1 ? " Closing" : "")} key={id}
-                         onClick={this.handleBackDropClick.bind(this)}
+                         onMouseDown={this.handleBackDropClick.bind(this)}
                          style={{ zIndex: id * 10 }}>
                         { modal }
                     </div>

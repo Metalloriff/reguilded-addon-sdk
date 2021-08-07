@@ -39,6 +39,10 @@ export default new class extends BaseAddon {
     
     // Inject our settings entries
     renderSettings({ props }): void {
+        // If the app settings categories isn't in the sections, return
+        // This is to prevent from rendering on server settings and other settings
+        if (!props.settingsOptions.sections.some(sect => sect.name === "App settings")) return;
+        
         // If our category already exists, nothing to do here
         if (props.settingsOptions.sections.some(sect => sect.id === "reguilded")) return;
         
