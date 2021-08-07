@@ -1,8 +1,9 @@
 ﻿{
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es5",
-    "sourceMap": true
+    "target": "es2020",
+    "sourceMap": true,
+    "jsx": "react",
   },
   "exclude": [
     "node_modules"

@@ -7,4 +7,9 @@ export default class BaseAddon {
     preinit(reGuilded: ReGuilded, addonManager: AddonManager): void {}
     init(reGuilded: ReGuilded, addonManager: AddonManager, webpackManager: WebpackManager): void {}
     uninit(): void {}
+    
+    // Extensions
+    handleError(...errors): void {
+        console.error(`%c${this.id}`, "color:white", ...errors);
+    }
 };

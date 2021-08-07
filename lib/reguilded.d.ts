@@ -2,17 +2,17 @@
     import type { FSWatcher } from "fs";
     
     export class ReGuilded {
-        settingsManager: SettingsManager;
-        themesManager: ThemesManager;
-        addonManager: AddonManager;
-        webpackManager: WebpackManager;
+        static settingsManager: SettingsManager;
+        static themesManager: ThemesManager;
+        static addonManager: AddonManager;
+        static webpackManager: WebpackManager;
     }
     
     export class SettingsManager {
         directory: string;
         config: {
-            themes: string[],
-            addons: string[]
+            themes: { enabled: string[] },
+            addons: { enabled: string[] }
         };
         
         getThemesDir(): string;
@@ -45,7 +45,7 @@
         }>;
         enabled: string[];
         
-        load(theme: string): void;
+        load(theme: any): void;
         unload(theme: string): void;
         
         isLoaded(id: string): boolean;
@@ -106,3 +106,5 @@
         asEsModule: (idk: any) => any;
     }
 }
+
+declare module "*.scss";

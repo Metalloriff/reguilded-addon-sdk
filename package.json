@@ -4,12 +4,17 @@
   "version": "1.0.0",
   "scripts": {
     "build": "npx webpack --env addon=%npm_config_addon% --env release=true",
-    "start": "npx webpack --env addon=%npm_config_addon% --watch"
+    "start": "npx webpack --env addon=%npm_config_addon% --watch",
+    "lib": "npx webpack --env lib=%npm_config_lib% --watch",
+    "build-lib": "npx webpack --env lib=%npm_config_lib% --env release=true"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@sucrase/webpack-loader": "^2.0.0",
     "css-loader": "^6.2.0",
     "react": "^17.0.2",
