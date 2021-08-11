@@ -8,7 +8,8 @@ export default new class extends BaseAddon {
     id: string = "addonLib";
     name: string = "addonLib";
     
-    init(reGuilded, addonManager, webpackManager) {
+    // TODO replace with init. preinit is so it will work as an addon
+    preinit(reGuilded, addonManager) {
         reGuilded.addonLib = {
             ...lib,
             patcher, ModalStack, SettingsFields

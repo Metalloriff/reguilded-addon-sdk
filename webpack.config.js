@@ -40,6 +40,9 @@ module.exports = env => ({
                     transforms: ["jsx", "typescript"]
                 }
             }
+        }, {
+            test: /\.html/i,
+            use: ["raw-loader"]
         }]
     },
     externals: [{

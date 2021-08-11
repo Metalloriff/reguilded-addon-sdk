@@ -1,0 +1,84 @@
+﻿.ReGuildedWelcomeModal {
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: 999999;
+  
+  animation-name: ReGuildedWelcomeModalAttachBackdrop;
+  animation-duration: 200ms;
+  animation-timing-function: ease-in;
+  
+  &::Before {
+    content: "";
+    
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    
+    background: black;
+    opacity: 0.5;
+  }
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  > :First-Child {
+    animation-name: ReGuildedWelcomeModalAttachBackdrop;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in;
+  }
+
+  &.Despawning {
+    animation-name: ReGuildedWelcomeModalDetachBackdrop;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in;
+    
+    > :First-Child {
+      animation-name: ReGuildedWelcomeModalDetach;
+      animation-duration: 200ms;
+      animation-timing-function: ease-in;
+    }
+  }
+  
+  .ModalV2-modal-content {
+    position: relative;
+    
+    .BannerImage {
+      width: 100%;
+      border-radius: 4px;
+      
+      margin-bottom: 24px;
+    }
+    
+    p {
+      display: block;
+      
+      &:Not(:First-Child) { margin-top: 10px; }
+      
+      > b {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@keyframes ReGuildedWelcomeModalAttachBackdrop {
+  0% { opacity: 0; }
+}
+
+@keyframes ReGuildedWelcomeModalAttach {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+}
+
+@keyframes ReGuildedWelcomeModalDetachBackdrop {
+  100% { opacity: 0; }
+}
+
+@keyframes ReGuildedWelcomeModalDetach {
+  100% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+}
